@@ -1,5 +1,6 @@
 package com.iu.main;
 
+import com.iu.main.bankBook.BankBookController;
 import com.iu.main.bankBook.BankBookDAO;
 import com.iu.main.bankBook.BankBookDTO;
 import com.iu.main.bankBook.BankBookInput;
@@ -10,11 +11,12 @@ public class Startmain {
 		System.out.println("StartMain");
 		//실행, Test
 		try {
-				BankBookDAO bankBookDAO = new BankBookDAO();
-				BankBookInput bankBookInput = new BankBookInput();
+			//	BankBookDAO bankBookDAO = new BankBookDAO();
+				//BankBookInput bankBookInput = new BankBookInput();
 				
-				BankBookDTO bankBookDTO = bankBookInput.bankBookAdd();
-				
+				//BankBookDTO bankBookDTO = bankBookInput.bankBookAdd();
+//				DBConnector dbConnector = new DBConnector();
+//				dbConnector.getConnection();
 		
 				
 				//BankBookDTO bankBookDTO = new BankBookDTO();
@@ -22,16 +24,25 @@ public class Startmain {
 				//bankBookDTO.setBookRate(5.9);
 				//bankBookDTO.setBookSale(1);
 				
-				int result = bankBookDAO.bankBookAdd(bankBookDTO);
-				if(result >= 1) {
-					System.out.println("성공");
-				}else {
-					System.out.println("실패");
-				}
+			//	int result = bankBookDAO.bankBookAdd(bankBookDTO);
+			//	if(result >= 1) {
+			//		System.out.println("성공");
+			//	}else {
+			//		System.out.println("실패");
+			//	}
 								
 				//DBConnector db = new DBConnector();
 				//db.getConnection();
 				
+			//	BankBookDTO bankBookDTO = new BankBookDTO();
+			//	bankBookDTO.setBookNum(5);
+			//	bankBookDTO = bankBookDAO.bankBookDetail(bankBookDTO);
+			//	bankBookDAO.bankBookDelete();
+			
+			BankBookController bankBookController = new BankBookController();
+			bankBookController.start();
+				
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
